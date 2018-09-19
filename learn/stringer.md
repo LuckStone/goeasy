@@ -1,45 +1,45 @@
-# ×Ö·û´®³£ÓÃ²Ù×÷
-### ¸Ä±ä×Ö·û´®ÖÐµÄÄ³Ð©×Ö·û
+# å­—ç¬¦ä¸²å¸¸ç”¨æ“ä½œ
+### æ”¹å˜å­—ç¬¦ä¸²ä¸­çš„æŸäº›å­—ç¬¦
 
 str := "hello roc"
 bytes := []byte(str)
 bytes[1] = 'a'
 str = string(bytes) //str == "hallo roc"
 
-### ½ØÈ¡×Ó´®
+### æˆªå–å­ä¸²
 
-substr := str[n:m] //½ØÈ¡´ÓË÷Òýnµ½m-1µÄ×Ó´®
+substr := str[n:m] //æˆªå–ä»Žç´¢å¼•nåˆ°m-1çš„å­ä¸²
 
-### ±éÀú×Ö·û´®
+### éåŽ†å­—ç¬¦ä¸²
 
-//for±éÀú£¬´Ë·½Ê½Ö»ÄÜ±éÀú´æ·ÅASCII
-//±àÂëµÄ×Ö·û´®£¬±ÈÈçÖÐÎÄ¾Í²»ÐÐ
+//foréåŽ†ï¼Œæ­¤æ–¹å¼åªèƒ½éåŽ†å­˜æ”¾ASCII
+//ç¼–ç çš„å­—ç¬¦ä¸²ï¼Œæ¯”å¦‚ä¸­æ–‡å°±ä¸è¡Œ
 for i := 0; i < len(str); i++ {
 	//... = str[i]
 }
-//for-range±éÀú£¬´Ë·½Ê½¿ÉÒÔ±éÀúUnicode
-//±àÂëµÄ×Ö·û´®£¬²»µ£ÐÄÂÒÂë
+//for-rangeéåŽ†ï¼Œæ­¤æ–¹å¼å¯ä»¥éåŽ†Unicode
+//ç¼–ç çš„å­—ç¬¦ä¸²ï¼Œä¸æ‹…å¿ƒä¹±ç 
 for index, char := range str {
 	fmt.Printf("%d %c\n",index,char)
 }
 
-### ¼ÆËã×Ö·û´®³¤¶È
+### è®¡ç®—å­—ç¬¦ä¸²é•¿åº¦
 
-//×Ö·û´®ÖÐ×Ö·ûÈ«ÎªASCIIÖÐµÄ×Ö·û
+//å­—ç¬¦ä¸²ä¸­å­—ç¬¦å…¨ä¸ºASCIIä¸­çš„å­—ç¬¦
 len(str)
-//×Ö·û´®ÖÐº¬·ÇASCIIµÄUnicode×Ö·û
+//å­—ç¬¦ä¸²ä¸­å«éžASCIIçš„Unicodeå­—ç¬¦
 utf8.RuneCountInString(str)
 
-### Á¬½Ó×Ö·û´®
+### è¿žæŽ¥å­—ç¬¦ä¸²
 
-### ËÙ¶È×î¿ìµÄÐ´·¨£º
+### é€Ÿåº¦æœ€å¿«çš„å†™æ³•ï¼š
 
 var buf bytes.Buffer
 buf.WriteString("hello ")
 buf.WriteString("roc")
 fmt.Println(buf.String()) //hello roc
 
-### »¹ÓÐÈçÏÂÁ½ÖÖ·½Ê½£º
+### è¿˜æœ‰å¦‚ä¸‹ä¸¤ç§æ–¹å¼ï¼š
 
 str := strings.Join([]string{"hello"," world"},"")
 fmt.Println(str)
